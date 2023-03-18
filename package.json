@@ -1,7 +1,7 @@
 {
   "name": "pkp-portfolio",
   "version": "0.1.0",
-  "homepage": "https://Pankaj901.github.io/Pankaj901.github.io",
+  "homepage": "https://Pankaj901.github.io",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

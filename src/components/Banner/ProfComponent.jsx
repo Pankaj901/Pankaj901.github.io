@@ -5,6 +5,8 @@ import { GiEarthAmerica } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
 
+
+
 const ProfComponent = () => {
   return (
     <Container id="home">
@@ -13,8 +15,8 @@ const ProfComponent = () => {
           <h4>
             Hello <span className="green">I'am</span>
           </h4>
-          <h1 className="green">Milad Amiri</h1>
-          <h3>UX/UI Designer and graphic designer</h3>
+          <h1 className="green">Pankaj Kumar Pal</h1>
+          <h3>Senior Software Engineer @ HCL Software</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
             iusto. Adipisci in qui officia provident tenetur sequi, deserunt
@@ -46,7 +48,7 @@ const ProfComponent = () => {
       <Slide direction="right">
         <Profile>
           <img
-            src="https://res.cloudinary.com/ghazni/image/upload/v1659082282/Yt-portfolio/Untitled-1_drcspz.png"
+            src="images/mypic2.png"
             alt="profile"
           />
         </Profile>
