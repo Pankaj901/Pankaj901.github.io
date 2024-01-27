@@ -25,6 +25,16 @@ body{
 .green {
   color: #01be96;
 }
+.red{
+  color: red;
+
+}
+.yellow{
+  color: yellow;
+}
+.darkblue{
+  color: rgb(0, 198, 145);
+}
 
 .slick-list, .slick-slider, .slick-track{
   padding: 1.5rem 0;

@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
+import { AiOutlineInstagram, AiFillMail } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaGithub, FaHackerrank } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 import { Slide } from "react-awesome-reveal";
+import 'primeicons/primeicons.css';
+        
 
 
 
@@ -15,12 +18,11 @@ const ProfComponent = () => {
           <h4>
             Hello <span className="green">I'am</span>
           </h4>
-          <h1 className="green">Pankaj Kumar Pal</h1>
-          <h3>Senior Software Engineer @ HCL Software</h3>
+          <h1 className="darkblue">Pankaj Kumar Pal</h1>
+          <h3>Senior Software Engineer 1 @ HCL Software</h3>
+          <h3>M.tech from Indian Institute of Technology, Guwahati</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            iusto. Adipisci in qui officia provident tenetur sequi, deserunt
-            corporis quos?
+          Dynamic and results-driven Machine Learning Engineer with 3.5+ years of professional experience in research and creating proof of concept (POC) solutions for complex problem statements. Adept in developing various client/server applications and designing ML training pipelines, as well as implementing MLOps and DevOps processes to ensure efficient and effective delivery of projects. Strong technical skills, combined with excellent analytical and problem-solving abilities, make me a valuable asset in any team environment.
           </p>
           <button>Let's talk</button>
           <Social>
@@ -28,12 +30,12 @@ const ProfComponent = () => {
             <div className="social-icons">
               <span>
                 <a href="/">
-                  <AiOutlineInstagram />
+                  <GiEarthAmerica />
                 </a>
               </span>
               <span>
                 <a href="/">
-                  <GiEarthAmerica />
+                  <FaGithub />
                 </a>
               </span>
               <span>
@@ -41,6 +43,26 @@ const ProfComponent = () => {
                   <FaLinkedinIn />
                 </a>
               </span>
+              <span>
+                <a href="/">
+                  <AiFillMail />
+                </a>
+              </span>
+              <span>
+                <a href="/">
+                  <SiLeetcode />
+                </a>
+              </span>
+              <span>
+                <a href="/">
+                  <FaHackerrank />
+                </a>
+              </span>
+              <span>
+                <a href="/">
+                  <AiOutlineInstagram />
+                </a>
+              </span>              
             </div>
           </Social>
         </Texts>
@@ -48,7 +70,7 @@ const ProfComponent = () => {
       <Slide direction="right">
         <Profile>
           <img
-            src="images/mypic2.png"
+            src="images/pkp.jpeg"
             alt="profile"
           />
         </Profile>
@@ -149,7 +171,7 @@ const Social = styled.div`
 `;
 const Profile = styled.div`
   img {
-    width: 25rem;
+    width: 20rem;
     filter: drop-shadow(0px 10px 10px #01be9570);
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
