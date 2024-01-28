@@ -34,12 +34,12 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://github.com/Pankaj901">
                   <FaGithub />
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://www.linkedin.com/in/pal-pankaj/">
                   <FaLinkedinIn />
                 </a>
               </span>
@@ -49,17 +49,17 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://leetcode.com/pankajpal901/">
                   <SiLeetcode />
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://www.hackerrank.com/profile/pankajkumarpal91">
                   <FaHackerrank />
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="https://www.instagram.com/code_with_pkp/">
                   <AiOutlineInstagram />
                 </a>
               </span>              
