@@ -5,7 +5,7 @@ import { Zoom } from 'react-awesome-reveal';
 
 const Certificates = () => {
   return (
-    <Container id='Certificate'>
+    <Container id='certificate'>
         <Zoom>
             <h1>Recent <span className="green">Certifications</span></h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque 
