@@ -19,14 +19,14 @@ const Footer = () => {
     <Container id="footer">
       <Profile>
         <Slide direction="left" delay={1}>
-          <h1>Portfolio</h1>
+          <h1>Contact</h1>
         </Slide>
         <div className="address">
           <Slide direction="left">
             <h1>Address:</h1>
           </Slide>
           <Slide direction="left">
-            <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
+            <p>Bangalore Urban, Karnataka, India</p>
           </Slide>
         </div>
         <div className="links">
@@ -38,7 +38,7 @@ const Footer = () => {
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+4733378901">+47 333 78 901</a>
+              <a href="tel:+917760802034">+917760802034</a>
             </Slide>
           </div>
           <div>
@@ -48,7 +48,7 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:miladamiri@gmail.com">miladamiri@gmail.com</a>
+              <a href="mailto:pankajkumarpal901@gmail.com">pankajkumarpal901@gmail.com</a>
             </Slide>
           </div>
         </div>

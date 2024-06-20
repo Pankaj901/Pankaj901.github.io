@@ -20,11 +20,18 @@ const ProfComponent = () => {
           </h4>
           <h1 className="darkblue">Pankaj Kumar Pal</h1>
           <h3>Senior Software Engineer 1 @ HCL Software</h3>
-          <h3>M.tech from Indian Institute of Technology, Guwahati</h3>
+          <h3>Experience - 3 years 10 months</h3>
+          <h3>M.tech, Indian Institute of Technology, Guwahati</h3>
           <p>
-          Dynamic and results-driven Machine Learning Engineer with 3.5+ years of professional experience in research and creating proof of concept (POC) solutions for complex problem statements. Adept in developing various client/server applications and designing ML training pipelines, as well as implementing MLOps and DevOps processes to ensure efficient and effective delivery of projects. Strong technical skills, combined with excellent analytical and problem-solving abilities, make me a valuable asset in any team environment.
+          As a Senior Software Engineer 1 at HCLSoftware, my tenure has been marked by a steadfast commitment to integrating advanced Generative AI into our software solutions. Our team leverages my expertise in responsible AI and large language models to enhance product capabilities and user experiences, ensuring we are at the forefront of technological innovation.<br></br>
+
+          By contributing AI-driven tools and platforms, we've been able to deliver cutting-edge software solutions that respond dynamically to the tech landscape's evolving demands, all while fostering a culture of knowledge-sharing and mentorship within our engineering team.
           </p>
-          <button>Let's talk</button>
+          <br></br>
+          <h3 color="yellow">Interest - Machine Learning, Computer Vision, Gen AI, AI product Development </h3>
+          <a href="https://drive.google.com/file/d/1PnINR0EoVtcu6tJ_iW90s45dLVlgWp52/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+  <button>Download Resume</button>
+</a>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
@@ -34,32 +41,32 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="https://github.com/Pankaj901">
+                <a href="https://github.com/Pankaj901" target="_blank" rel="noopener noreferrer">
                   <FaGithub />
                 </a>
               </span>
               <span>
-                <a href="https://www.linkedin.com/in/pal-pankaj/">
+                <a href="https://www.linkedin.com/in/pal-pankaj/" target="_blank" rel="noopener noreferrer">
                   <FaLinkedinIn />
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a href="mailto:pankajkumarpal901@gmail.com">
                   <AiFillMail />
                 </a>
               </span>
               <span>
-                <a href="https://leetcode.com/pankajpal901/">
+                <a href="https://leetcode.com/pankajpal901/" target="_blank" rel="noopener noreferrer">
                   <SiLeetcode />
                 </a>
               </span>
               <span>
-                <a href="https://www.hackerrank.com/profile/pankajkumarpal91">
+                <a href="https://www.hackerrank.com/profile/pankajkumarpal91" target="_blank" rel="noopener noreferrer">
                   <FaHackerrank />
                 </a>
               </span>
               <span>
-                <a href="https://www.instagram.com/code_with_pkp/">
+                <a href="https://www.instagram.com/code_with_pkp/" target="_blank" rel="noopener noreferrer">
                   <AiOutlineInstagram />
                 </a>
               </span>              

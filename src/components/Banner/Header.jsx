@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
-import { GiSparkSpirit } from "react-icons/gi";
+import { BsPersonSquare   } from "react-icons/bs";
 
 const Header = () => {
     const [bar, setBar] = useState(false);
   return (
     <Container bar={bar}>
         <Logo>
-            <span className='yellow'><GiSparkSpirit/></span>
+            <span className='yellow'><BsPersonSquare   /></span>
             <h1>Portfolio</h1>
         </Logo>
         <Nav bar={bar}>
             <span><a href="#home">Home</a></span>
             <span><a href="#service">About</a></span>
             <span><a href="#project">Projects</a></span>
+            <span><a href="#certificate">Certifications</a></span>
             <span><a href="#client">Testimonials</a></span>
-            <span><a href="#footer">Portfolio</a></span>
+            <span><a href="#footer">Contact</a></span>
         </Nav>
         <div
         onClick={() => setBar(!bar)}

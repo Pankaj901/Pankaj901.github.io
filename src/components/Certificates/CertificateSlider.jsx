@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import Slider from 'react-slick';
-import Project from './Project';
+import Certificate from './Certificate';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import styled from 'styled-components';
 
@@ -67,11 +67,11 @@ var settings = {
       }
     ]
   };
-const SliderComp = () => {
+const CertificateSliderComp = () => {
   const arrowRef = useRef(null);
     let sliderProject = "";
     sliderProject = data.map((item, i) => (
-        <Project item = {item} key={i}/>
+        <Certificate item = {item} key={i}/>
     ))
   return (
     <Container>
@@ -90,7 +90,7 @@ const SliderComp = () => {
   )
 }
 
-export default SliderComp;
+export default CertificateSliderComp;
 
 const Container = styled.div`
   position: relative;

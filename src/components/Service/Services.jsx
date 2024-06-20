@@ -1,7 +1,7 @@
 import React from "react";
-import { MdDesignServices } from "react-icons/md";
-import { GiCycle, GiArtificialIntelligence } from "react-icons/gi";
-import { FiCodesandbox } from "react-icons/fi";
+import { GiArtificialIntelligence } from "react-icons/gi";
+import { MdOutlineGeneratingTokens } from "react-icons/md";
+import { FaCloudDownloadAlt } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 import styled from "styled-components";
 import Card from "./Card";
@@ -12,7 +12,7 @@ const Services = () => {
     <Container id="service">
       <Slide direction="down">
         <h4>
-          My <span className="green">services</span>
+          My <span className="green">Work Domain</span>
         </h4>
         <h1>What I Do</h1>
       </Slide>
@@ -33,34 +33,19 @@ const Services = () => {
                 adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
           />
         </Slide>
-        <Slide direction="">
+        <Slide direction="down">
           <Card
-            Icon={GiCycle}
-            title={"MLOps & DevOps"}
+            Icon={MdOutlineGeneratingTokens}
+            title={"Gen AI"}
             disc={`Lorem ipsum dolor sit amet consectetur 
                 adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
           />
         </Slide>
+        
         <Slide direction="right">
           <Card
-            Icon={GiCycle}
-            title={"Web3 Development"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
-          />
-        </Slide>
-        <Slide direction="right">
-          <Card
-            Icon={GiCycle}
-            title={"Pytorch"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
-          />
-        </Slide>
-        <Slide direction="right">
-          <Card
-            Icon={GiCycle}
-            title={"Cloud"}
+            Icon={FaCloudDownloadAlt}
+            title={"Cloud Technologies"}
             disc={`Lorem ipsum dolor sit amet consectetur 
                 adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
           />
