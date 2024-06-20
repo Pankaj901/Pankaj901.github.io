@@ -6,24 +6,24 @@ import styled from 'styled-components';
 
 let data = [
     {
-        img : "images/Projects/chitrakar.png",
-        disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
+        img : "images/Certifications/genai_deeplearning.png",
+        disc : "Generative AI with Large Language Models by Coursera, DeepLearning.AI & Amazon Web Services",
+        link: "https://www.coursera.org/account/accomplishments/verify/W52AY5HY6EK2"
     },
     {
-        img : "images/Projects/chitrakar.png",
-        disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
+        img : "images/Certifications/aws_partner_gen_ai.png",
+        disc : "AWS Partner: Generative AI on AWS Essentials(Business)by Amazon Web Services (AWS)",
+        link : "https://www.credly.com/badges/b427a493-355a-45cb-bfb7-9c0d87a15707/public_url"
     },
     {
-        img : "images/Projects/cat.png",
-        disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
+        img : "images/Certifications/ann.png",
+        disc : "Neural Networks in Python: Deep Learning for Beginners by Udemy",
+        link: "https://www.udemy.com/certificate/UC-f7a00311-366a-4424-b094-dd07246da8bc/"
     },
     {
-        img : "images/Projects/cat.png",
-        disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
-    },
-    {
-        img : "images/Projects/cat.png",
-        disc : "Lorem ipsum dolor sit amet consectetur adipisicing elit.Eveniet iure rerum obcaecati et laborum earum!"
+        img : "images/Certifications/yolo.png",
+        disc : "Train YOLO for Object Detection with Custom Data by Udemy",
+        link: "https://www.udemy.com/certificate/UC-2e7f9f8e-df8a-4627-a133-ad6571bd2efc/"
     }
 ];
 

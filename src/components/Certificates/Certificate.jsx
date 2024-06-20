@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Certificate = (props) => {
-    const { img, disc } = props.item;
+    const { img, disc, link } = props.item;
   return (
     <Container className='certificate'>
         <img src={img} alt="certificate" />
         <div className="disc">
             <h1>Description</h1>
             <p>{disc}
-            <a href="/">demo</a>
+            <a href={link} target="_blank" rel="noopener noreferrer">link</a> 
             </p>
         </div>
     </Container>

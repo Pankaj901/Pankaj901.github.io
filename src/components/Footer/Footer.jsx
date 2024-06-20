@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -7,14 +7,51 @@ import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
 import { BsFacebook, BsSlack } from "react-icons/bs";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
+import emailjs from "emailjs-com";
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      // "YOUR_SERVICE_ID", // Replace with your service ID
+      // "YOUR_TEMPLATE_ID", // Replace with your template ID
+      // formData,
+      // "YOUR_USER_ID" // Replace with your user ID
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
+    .then((response) => {
+      console.log("SUCCESS!", response.status, response.text);
+    })
+    .catch((err) => {
+      console.error("FAILED...", err);
+    });
+  };
+
   const scrollUp = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
   };
+
   return (
     <Container id="footer">
       <Profile>
@@ -95,26 +132,45 @@ const Footer = () => {
       </Profile>
       <Form>
         <Slide direction="right">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="name">
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Fullname..." />
+              <input 
+                type="text" 
+                name="fullname" 
+                placeholder="Fullname..." 
+                value={formData.fullname}
+                onChange={handleChange}
+              />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." />
+              <input 
+                type="email" 
+                name="email" 
+                placeholder="Email..." 
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea 
+                name="message" 
+                cols="30" 
+                rows="10" 
+                placeholder="Message..."
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
             </div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </Slide>
       </Form>
