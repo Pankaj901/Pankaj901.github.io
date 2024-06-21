@@ -16,6 +16,8 @@ const Footer = () => {
     message: ""
   });
 
+  const [notification, setNotification] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -28,10 +30,6 @@ const Footer = () => {
     e.preventDefault();
 
     emailjs.send(
-      // "YOUR_SERVICE_ID", // Replace with your service ID
-      // "YOUR_TEMPLATE_ID", // Replace with your template ID
-      // formData,
-      // "YOUR_USER_ID" // Replace with your user ID
       process.env.REACT_APP_EMAILJS_SERVICE_ID,
       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
       formData,
@@ -39,9 +37,20 @@ const Footer = () => {
     )
     .then((response) => {
       console.log("SUCCESS!", response.status, response.text);
+      setNotification("Email sent successfully!");
+      setFormData({ fullname: "", email: "", message: "" });
+
+      setTimeout(() => {
+        setNotification("");
+      }, 3000); // Hide notification after 3 seconds
     })
     .catch((err) => {
       console.error("FAILED...", err);
+      setNotification("Failed to send email. Please try again after some time.");
+
+      setTimeout(() => {
+        setNotification("");
+      }, 3000); // Hide notification after 3 seconds
     });
   };
 
@@ -172,6 +181,7 @@ const Footer = () => {
             </div>
             <button type="submit">Submit</button>
           </form>
+          {notification && <Notification>{notification}</Notification>}
         </Slide>
       </Form>
     </Container>
@@ -337,3 +347,18 @@ const Form = styled.div`
     }
   }
 `;
+
+const Notification = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:#ff8c00;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+
