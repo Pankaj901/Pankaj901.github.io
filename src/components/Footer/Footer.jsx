@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -16,7 +16,30 @@ const Footer = () => {
     message: ""
   });
 
-  const [notification, setNotification] = useState("");
+  const [notification, setNotification] = useState({
+    message: "",
+    type: ""
+  });
+  const [isSending, setIsSending] = useState(false);
+  const notificationTimeoutRef = useRef(null);
+
+  const showNotification = (message, type) => {
+    setNotification({ message, type });
+    if (notificationTimeoutRef.current) {
+      clearTimeout(notificationTimeoutRef.current);
+    }
+    notificationTimeoutRef.current = setTimeout(() => {
+      setNotification({ message: "", type: "" });
+    }, 3000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (notificationTimeoutRef.current) {
+        clearTimeout(notificationTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,32 +49,60 @@ const Footer = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSending) {
+      return;
+    }
 
-    emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      formData,
-      process.env.REACT_APP_EMAILJS_USER_ID
-    )
-    .then((response) => {
-      console.log("SUCCESS!", response.status, response.text);
-      setNotification("Email sent successfully!");
-      setFormData({ fullname: "", email: "", message: "" });
+    const { fullname, email, message } = formData;
+    const trimmedData = {
+      fullname: fullname.trim(),
+      email: email.trim(),
+      message: message.trim()
+    };
 
-      setTimeout(() => {
-        setNotification("");
-      }, 3000); // Hide notification after 3 seconds
-    })
-    .catch((err) => {
+    if (!trimmedData.fullname || !trimmedData.email || !trimmedData.message) {
+      showNotification("Please fill all fields before submitting.", "error");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmedData.email)) {
+      showNotification("Please enter a valid email address.", "error");
+      return;
+    }
+
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+
+    if (!serviceId || !templateId || !userId) {
+      showNotification("Email service is not configured. Please try again later.", "error");
+      return;
+    }
+
+    try {
+      setIsSending(true);
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        trimmedData,
+        userId
+      );
+
+      if (response?.status === 200) {
+        showNotification("Email sent successfully!", "success");
+        setFormData({ fullname: "", email: "", message: "" });
+      } else {
+        showNotification("Unable to confirm email delivery. Please try again.", "error");
+      }
+    } catch (err) {
       console.error("FAILED...", err);
-      setNotification("Failed to send email. Please try again after some time.");
-
-      setTimeout(() => {
-        setNotification("");
-      }, 3000); // Hide notification after 3 seconds
-    });
+      showNotification("Failed to send email. Please try again after some time.", "error");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const scrollUp = () => {
@@ -179,9 +230,11 @@ const Footer = () => {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={isSending}>
+              {isSending ? "Sending..." : "Submit"}
+            </button>
           </form>
-          {notification && <Notification>{notification}</Notification>}
+          {notification.message && <Notification status={notification.type}>{notification.message}</Notification>}
         </Slide>
       </Form>
     </Container>
@@ -237,9 +290,9 @@ const Profile = styled.div`
       gap: 0.5rem;
       a {
         text-decoration: none;
-        color: lightgray;
+        color: var(--muted);
         :hover {
-          color: orange;
+          color: var(--accent);
         }
       }
     }
@@ -259,14 +312,15 @@ const Profile = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #000;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
         width: 2rem;
         height: 2rem;
         margin-right: 0.5rem;
         border-radius: 50px;
 
         :hover {
-          background-color: orange;
+          background-color: var(--accent);
         }
 
         a {
@@ -280,7 +334,7 @@ const Profile = styled.div`
 const ArrowUp = styled.div`
   width: 2rem;
   height: 2rem;
-  background-color: #01be96;
+  background-color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -302,14 +356,15 @@ const Form = styled.div`
   }
 
   form {
-    background-color: #191923;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
     padding: 0.8rem;
     border-radius: 5px;
     .name,
     .email,
     .message {
       display: flex;
-      border: 1px solid gray;
+      border: 1px solid var(--border);
       margin-bottom: 0.5rem;
       input,
       textarea {
@@ -321,7 +376,7 @@ const Form = styled.div`
         padding: 1rem 0.5rem;
       }
       span {
-        background-color: #3e3e3e;
+        background-color: var(--card);
         width: 3rem;
         display: flex;
         align-items: center;
@@ -336,13 +391,21 @@ const Form = styled.div`
     button {
       width: 5rem;
       height: 1.8rem;
-      background-color: #01be96;
+      background-color: var(--accent);
       border: none;
       border-radius: 5px;
-      filter: drop-shadow(0px 4px 5px #01be9551);
+      filter: drop-shadow(0px 4px 5px rgba(20, 184, 166, 0.32));
       cursor: pointer;
+      color: #fff;
+      font-weight: 500;
       :hover {
-        filter: drop-shadow(0px 6px 9px #01be9551);
+        background-color: var(--accent-hover);
+        filter: drop-shadow(0px 6px 9px rgba(13, 148, 136, 0.42));
+      }
+
+      :disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
       }
     }
   }
@@ -353,7 +416,7 @@ const Notification = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color:#ff8c00;
+  background-color: ${({ status }) => (status === "success" ? "var(--success)" : "var(--error)")};
   color: #fff;
   padding: 1rem;
   border-radius: 5px;

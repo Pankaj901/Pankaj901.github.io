@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import {IoIosQuote} from "react-icons/io";
 import {AiOutlineStar} from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
 
 const ClientSlider = (props) => {
-    const {name, position, img_url, stars, disc} = props.item;
+        const {name, position, stars, disc} = props.item;
   return (
     <Container>
         <Header>
@@ -21,7 +22,9 @@ const ClientSlider = (props) => {
             {disc}
         </Body>
         <Footer>
-            <img src={img_url} alt={name} />
+            <div className="avatar" aria-hidden="true">
+                <FaUserCircle />
+            </div>
             <div className="details">
                 <h1>{name}</h1>
                 <p>{position}</p>
@@ -34,7 +37,8 @@ const ClientSlider = (props) => {
 export default ClientSlider
 
 const Container = styled.div`
-    background: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
+    background: var(--card);
+    border: 1px solid var(--border);
     padding: 1.5rem 1rem;
     margin: 0 1rem;
 `
@@ -45,7 +49,7 @@ const Header = styled.div`
     justify-content: space-between;
     .quote{
         font-size: 3rem;
-        color: #01be96;
+        color: var(--accent);
         opacity: 0.7;
     }
 
@@ -62,11 +66,16 @@ const Footer = styled.div`
     display: flex;
     align-items: center;
     gap: 1rem;
-    img{
+    .avatar{
         width: 4rem;
         height: 4rem;
-        border-radius: 50px;
-        object-fit: cover;
+        border-radius: 50%;
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        background: rgba(248, 250, 252, 0.06);
     }
 
     h1{

@@ -20,7 +20,8 @@ export default Project;
 
 const Container = styled.div`
     height: 10rem;
-    background-color: #4e5156;
+    background-color: var(--card);
+    border: 1px solid var(--border);
     margin: 0 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
@@ -51,7 +52,7 @@ const Container = styled.div`
             font-size: 0.8rem;
             a{
                 margin-left: 0.4rem;
-                color: red;
+                color: var(--accent);
             }
         }
     }

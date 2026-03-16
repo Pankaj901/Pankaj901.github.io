@@ -7,36 +7,39 @@ import { Slide } from 'react-awesome-reveal';
 
 let clients = [
     {
-        name : "John Michel",
-        position : "web developer",
-        img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars : 3,
-        disc : `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`
-    },
-    {
-        name : "John Michel",
-        position : "web developer",
-        img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
-        stars : 4,
-        disc : `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`
-    },
-    {
-        name : "John Michel",
-        position : "web developer",
+        name : "Sachin Sharma",
+        position : "Architect 1",
         img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
         stars : 5,
-        disc : `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`
+        disc : `Pankaj is one of the most dependable engineers I have worked with. If a GenAI or ML task is assigned to him, we know it will be delivered with strong quality and practical impact.`
     },
     {
-        name : "John Michel",
-        position : "web developer",
+        name : "Ankur Sharma",
+        position : "Tech Lead 3",
         img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
         stars : 5,
-        disc : `Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Temporibus consequuntur dolores labore natus similique nemo doloribus cum accusantium adipisci maiores.`
+        disc : `Working with Pankaj was always smooth. He combines clear thinking with deep AI knowledge, and his approach to building GenAI features is structured, fast, and reliable.`
+    },
+    {
+        name : "Madhu T",
+        position : "Architect 2",
+        img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
+        stars : 5,
+        disc : `What stands out about Pankaj is consistency. From AI experiments to production-ready implementations, he stays focused and dependable. His ML and Computer Vision understanding is genuinely strong.`
+    },
+    {
+        name : "Ashish Mathur",
+        position : "Technical Director",
+        img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
+        stars : 5,
+        disc : `As Pankaj's manager, I have always valued our conversations on how AI can solve current business problems. He consistently brings unique depth of understanding, asks the right questions, and proposes practical approaches that convert ideas into measurable outcomes.`
+    },
+    {
+        name : "Manish Sharma",
+        position : "Senior Software Engineer",
+        img_url : "https://t4.ftcdn.net/jpg/02/90/27/39/360_F_290273933_ukYZjDv8nqgpOBcBUo5CQyFcxAzYlZRW.jpg",
+        stars : 5,
+        disc : `Whenever our team needed someone to handle AI or GenAI work end-to-end, Pankaj was the first choice. He is thoughtful, execution-focused, and very dependable under tight timelines.`
     },
 ]
 var settings = {
@@ -84,7 +87,7 @@ const Clients = () => {
     <Container id='client'>
         <Slide direction="left">
             <span className="green">Testimonials</span>
-            <h1>what peoples say</h1>
+            <h1>what people say</h1>
         </Slide>
         <Testimonials>
             <Slider ref={arrowRef} {...settings}>
@@ -141,7 +144,7 @@ const Container = styled.div`
     .slick-dots li button{
         width: 9px;
         height: 4px;
-        background: linear-gradient(159deg, rgb(45, 45, 58) 0%, rgb(43, 43, 53) 100%);
+        background: var(--surface);
         padding: 0.1rem;
         margin-top: 1rem;
         transition: all 400ms ease-in-out;
@@ -149,7 +152,7 @@ const Container = styled.div`
     }
     
     .slick-dots li.slick-active button{
-        background: #01be96;
+        background: var(--accent);
         width: 15px;
     }
 
@@ -171,7 +174,7 @@ const Buttons = styled.div`
         background-color: transparent;
         margin-left: 0.5rem;
         border: none;
-        color: #01be96;
+        color: var(--accent);
         cursor: pointer;
         font-size: 1.1rem;
     }

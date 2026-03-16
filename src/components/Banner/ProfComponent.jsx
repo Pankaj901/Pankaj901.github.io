@@ -19,16 +19,16 @@ const ProfComponent = () => {
             Hello <span className="green">I'am</span>
           </h4>
           <h1 className="darkblue">Pankaj Kumar Pal</h1>
-          <h3>Senior Software Engineer 1 @ HCL Software</h3>
-          <h3>Experience - 3 years 10 months</h3>
+          <h3>GenAI Technical Lead</h3>
+          <h3>Experience - 5.6 years</h3>
           <h3>M.tech, Indian Institute of Technology, Guwahati</h3>
           <p>
-          As a Senior Software Engineer 1 at HCLSoftware, my tenure has been marked by a steadfast commitment to integrating advanced Generative AI into our software solutions. Our team leverages my expertise in responsible AI and large language models to enhance product capabilities and user experiences, ensuring we are at the forefront of technological innovation.<br></br>
+          I am a GenAI Technical Lead with 5.5 years of experience building AI-based applications for real-world business use cases. I design and deliver intelligent systems using Generative AI, Machine Learning, and Computer Vision, with a focus on scalable architecture, practical deployment, and measurable product impact.<br></br>
 
-          By contributing AI-driven tools and platforms, we've been able to deliver cutting-edge software solutions that respond dynamically to the tech landscape's evolving demands, all while fostering a culture of knowledge-sharing and mentorship within our engineering team.
+          My work spans end-to-end AI solution development, from ideation and model strategy to engineering implementation and production rollout, while also mentoring teams on best practices for modern AI product development.
           </p>
           <br></br>
-          <h3 color="yellow">Interest - Machine Learning, Computer Vision, Gen AI, AI product Development </h3>
+          <h3 color="yellow">Focus Areas - AI-based Applications, Generative AI, Machine Learning, Computer Vision</h3>
           <a href="https://drive.google.com/file/d/1PnINR0EoVtcu6tJ_iW90s45dLVlgWp52/view?usp=sharing" target="_blank" rel="noopener noreferrer">
   <button>Download Resume</button>
 </a>
@@ -129,13 +129,14 @@ const Texts = styled.div`
     padding: 0.7rem 2rem;
     margin-top: 3rem;
     cursor: pointer;
-    background-color: #01be96;
+    background-color: var(--accent);
     border: none;
-    color: #fff;
+    color: var(--text);
     font-weight: 500;
-    filter: drop-shadow(0px 10px 10px #01be9551);
+    filter: drop-shadow(0px 10px 10px rgba(20, 184, 166, 0.32));
     :hover {
-      filter: drop-shadow(0px 10px 10px #01be9570);
+      background-color: var(--accent-hover);
+      filter: drop-shadow(0px 10px 10px rgba(13, 148, 136, 0.42));
     }
   }
 `;
@@ -159,7 +160,7 @@ const Social = styled.div`
       width: 2.3rem;
       height: 2rem;
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-      background-color: #01be96;
+      background-color: var(--accent);
       position: relative;
       transition: transform 400ms ease-in-out;
       :hover {
@@ -179,7 +180,7 @@ const Social = styled.div`
 const Profile = styled.div`
   img {
     width: 20rem;
-    filter: drop-shadow(0px 10px 10px #01be9570);
+    filter: drop-shadow(0px 10px 10px rgba(20, 184, 166, 0.42));
     transition: transform 400ms ease-in-out;
     @media (max-width: 790px) {
       width: 20rem;
