@@ -1,17 +1,6 @@
-# Pankaj Kumar Pal - Portfolio Website
+# Portfolio Website
 
-Personal portfolio website built with React and styled-components, showcasing work experience, AI/GenAI capabilities, projects, certifications, testimonials, and contact details.
-
-Live URL: https://pankaj901.github.io/
-
-## Overview
-
-This repository powers the portfolio of Pankaj Kumar Pal (GenAI Technical Lead, 5.6 years experience), focused on:
-
-- AI-powered application development
-- Generative AI, RAG, and agentic systems
-- Machine Learning and Computer Vision
-- Technical leadership and product-focused engineering
+A personal portfolio website built with React and styled-components, showcasing expertise, projects, certifications, testimonials, and a contact form.
 
 ## Key Features
 
@@ -132,11 +121,4 @@ If contact form fails on live site:
 4. Check template parameter names (fullname, email, message).
 5. Check EmailJS domain restrictions allow `pankaj901.github.io`.
 
-## Profiles
 
-- GitHub: https://github.com/Pankaj901
-- LinkedIn: https://www.linkedin.com/in/pal-pankaj/
-- Portfolio: https://pankaj901.github.io/
-- LeetCode: https://leetcode.com/pankajpal901/
-- HackerRank: https://www.hackerrank.com/profile/pankajkumarpal91
-- Instagram: https://www.instagram.com/code_with_pkp/
